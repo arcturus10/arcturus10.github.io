@@ -1,0 +1,13 @@
+{
+    "name": ".NET Development - arcturus10",
+    "icons": [
+        {
+            "src": "/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#292626",
+    "background_color": "#292626",
+    "display": "standalone"
+}
