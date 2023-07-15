@@ -1,0 +1,7 @@
+{
+    "name": "WebStart",
+    "short_name": "WebStart",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
