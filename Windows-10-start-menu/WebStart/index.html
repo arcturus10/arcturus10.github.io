@@ -60,10 +60,13 @@
          let finalurl = url.concat(val);
          window.open(finalurl, "_blank");
       }
+      let dates = new Date().toJSON();
+         document.getElementById("date").innerHTML = dates;
+
    </script>
          <!-- Main content -->
          <header class="applications scrollbar">
-            <p><b>Applications</b></p>
+            <p id="date"></p>
             <div class="main-container">
                 <div class="box office" onclick="office()">
                   <img class="width-large" src="./Start Menu_files/office-white.svg" alt="microsoft office">
