@@ -62,11 +62,14 @@
       }
    </script>
    <script>
-      document.getElementById("date").innerHTML = Date();
+    for (;;) {
+       var x = document.getElementById("heading");
+       let m = x.innerText = Date();
+}
    </script>
          <!-- Main content -->
          <header class="applications scrollbar">
-            <p id="date"></p>
+            <p id="heading"</p>
             <div class="main-container">
                 <div class="box office" onclick="office()">
                   <img class="width-large" src="./Start Menu_files/office-white.svg" alt="microsoft office">
