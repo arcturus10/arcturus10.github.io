@@ -9,6 +9,12 @@
    <link rel="stylesheet" href="css/layout.css">
    <link rel="manifest" href="site.webmanifest">
    <script src="base.js"></script>
+   <style>
+      @font-face {
+         font-family: OSans;
+         src: url("OSans.ttf");
+      }
+   </style>
 </head>
 <body onLoad="ShowDate()">
    <main class="container bg-primary">
@@ -70,7 +76,7 @@
    </script>
          <!-- Main content -->
          <header class="applications scrollbar">
-            <div id="dateview"></div>
+            <div id="dateview" style="font-family:OSans;font-size:x-large;"></div>
             <div class="main-container">
                 <div class="box office" onclick="office()">
                   <img class="width-large" src="./Start Menu_files/office-white.svg" alt="microsoft office">
