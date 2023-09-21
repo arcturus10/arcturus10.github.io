@@ -1,0 +1,24 @@
+#banner-content{
+color: WhiteSmoke;
+background-image:url("https://img.freepik.com/free-photo/deep-blue-plain-concrete-textured-background_53876-103890.jpg");
+font-family:Arial;
+font-weight:300;
+text-align: center;
+}
+body{
+    background-image:url("wp.jpg");
+        background-size: cover;
+}
+h1{
+font-size:32pt;
+}
+h2{
+font-size:16pt;
+text-align:center;background:rgba(158,158,158,0.3)
+}
+h3{
+font-size:12.8pt;
+}
+.alt{
+font-family:serif
+}
