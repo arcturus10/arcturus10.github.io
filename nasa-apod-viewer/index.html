@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            'custom': "#90cdf4"
+          }
+        }
+      }
+    }
+  </script>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+</head>
+
+<body class="bg-white dark:bg-slate-950">
+
+    <header class="flex justify-center items-center h-48 bg-grey-900 text-white"><h1 class="text-4xl font-bold">NASA APOD Explorer</h1></header>
+    <header class="flex justify-center items-center h-48 bg-grey-900 text-white"><h3 class="text-2xl">Discover the cosmos! Everyday</h3></header>
+
+<pre>
+
+
+</pre>
+<center><input type="date" id="dateinput"><br>
+<input type="submit" class="bg-white" onclick="FetchMediaByDate(document.getElementById('dateinput').value)"></center>
+<script> 
+function FetchMediaByDate(date){
+    $.getJSON("https://api.nasa.gov/planetary/apod?api_key=Y28ow0rPKxlGHQXpkNZm5lOO9tVWWxe52DgXgTi4&date="+date, function (data) {
+
+        if (data.media_type == "image") {
+            var text = `Redirecting you to ${data.hdurl}`
+            location.replace(data.hdurl)
+        }
+
+        else if (data.media_type == "video" && data.hdurl == null) {
+            if (data.url != null) {
+                window.alert('You are being redirected to the URL of the resource')
+                location.replace(data.url)
+            }
+        }
+
+        else {
+            location.replace("about:blank")
+            //Error
+        }
+    }
+)
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+<br>
+<div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom duration-300" id="expbox"></div>
+<script id="explanation-today">
+  $.getJSON("https://api.nasa.gov/planetary/apod?api_key=Y28ow0rPKxlGHQXpkNZm5lOO9tVWWxe52DgXgTi4", function (DATA) {
+    var explanation = `${DATA.explanation}`;
+    document.getElementById("expbox").innerHTML = explanation;
+  })
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>
