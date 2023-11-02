@@ -11,13 +11,14 @@
         extend: {
           colors: {
             clifford: '#da373d',
-            'custom': "#90c5f4"
+            'custom': "#357EC7"
           }
         }
       }
     }
   </script>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="custom_pre.css" />
 </head>
 
 <body class="text-black dark:bg-slate-950 dark:text-white">
@@ -33,7 +34,7 @@
 </pre>
 
 <span class="text-black">
-<center><input type="date" id="dateinput"><br>
+<center><input type="date" id="dateinput"><br><br>
 <input type="submit" class="bg-white" onclick="FetchMediaByDate(document.getElementById('dateinput').value)"></center>
 </span>
 
@@ -62,25 +63,22 @@ function FetchMediaByDate(date){
 }
 </script>
 <br>
-
-
-<!---EXPLANATION CODE-->
-
-
 <center><button id="refresh" class="bg-white text-black text-2xl" onclick="GetEXplanation((document.getElementById('dateinput').value))">Show Explanation</button><br><br></center>
 
 <div class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom duration-300 text-black" id="expbox"><h1 style="font-family:monospace;font-weight: bolder;">Select a date and hit the "Show Explanation" button to get started</h1></div>
 <script id="explanation-today">
   function GetEXplanation(dt){
   $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+dt, function (DATA) {
-    var explanation = `${DATA.explanation}`;
+    var explanation = `<b>${DATA.title}</b><br>${DATA.explanation}`;
     document.getElementById("expbox").innerHTML = explanation;
   })
   }
 </script>
 
-<!---/EXPLANATION CODE-->
-<pre>This webpage uses NASA's APOD API. <a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a> All images are copyrighted by their respective authors.
+<br>
+<pre id="footer">This webpage uses NASA's APOD API.
+<b><a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a></b>
+<u>All images are copyrighted by their respective authors.</u><br>
 This webpage aims provides an interface to access media made publicly available by NASA.</pre>
 
 
