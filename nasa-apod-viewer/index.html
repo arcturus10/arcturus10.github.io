@@ -69,16 +69,17 @@ function FetchMediaByDate(date){
   function GetEXplanation(dt){
   $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+dt, function (DATA) {
     var explanation = `<b>${DATA.title}</b><br>${DATA.explanation}`;
-    document.getElementById("expbox").innerHTML = explanation;
-  })
-  }
+    document.getElementById("expbox").innerHTML=explanation;
+  })}
 </script>
 <br>
-    <pre class="rounded-lg p-4" id="footer">This webpage uses NASA's APOD API.
+
+
+<pre class="rounded-lg p-4" id="footer">This webpage uses NASA's APOD API.
 <b><a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a></b>
 <u>All images are copyrighted by their respective authors.</u><br>
 This webpage aims provides an interface to access media made publicly available by NASA.
-  <img class="zoom" src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
+  <img src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
 </pre>
   </body>
 </html>
