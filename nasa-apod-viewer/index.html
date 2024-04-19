@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <head>
+    <meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwindcss_config.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-            'custom': "#357EC7"
-          }
-        }
-      }
-    }
-  </script>
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <link rel="stylesheet" href="custom_pre.css" />
-</head>
+  </head>
 
-<body class="text-black dark:bg-slate-950 dark:text-white">
+  <body class="text-black dark:bg-slate-950 dark:text-white">
 
     <header class="flex items-center h-48 bg-grey-900">
-      <img src="https://www.nasa.gov/wp-content/uploads/2021/05/nasa-logo-web-rgb.png" alt="NASA Insigna" /><h1 class="text-4xl font-bold">NASA APOD Explorer</h1>
+      <img
+        src="https://www.nasa.gov/wp-content/uploads/2021/05/nasa-logo-web-rgb.png"
+        alt="NASA Insigna" /><h1 class="text-4xl font-bold">NASA APOD
+        Explorer</h1>
     </header>
-    <header class="flex justify-center items-center h-48 bg-grey-900"><h3 class="text-2xl">Discover the cosmos! Everyday</h3></header>
+    <header class="flex justify-center items-center h-48 bg-grey-900"><h3
+        class="text-2xl">Discover the cosmos! Everyday</h3></header>
 
-<pre>
+    <pre>
 
 
 </pre>
 
-<span class="text-black">
-<center><input type="date" id="dateinput"><br><br>
-<input type="submit" class="bg-white" onclick="FetchMediaByDate(document.getElementById('dateinput').value)"></center>
-</span>
+    <span class="text-black">
+      <center><input type="date" id="dateinput"><br><br>
+        <input type="submit" class="bg-white"
+          onclick="FetchMediaByDate(document.getElementById('dateinput').value)"></center>
+    </span>
 
-<script> 
+    <script> 
 function FetchMediaByDate(date){
     $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+date, function (data) {
 
@@ -62,11 +58,16 @@ function FetchMediaByDate(date){
 )
 }
 </script>
-<br>
-<center><button id="refresh" class="bg-white text-black text-2xl" onclick="GetEXplanation((document.getElementById('dateinput').value))">Show Explanation</button><br><br></center>
+    <br>
+    <center><button id="refresh" class="bg-white text-black text-2xl"
+        onclick="GetEXplanation((document.getElementById('dateinput').value))">Show
+        Explanation</button><br><br></center>
 
-<div class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom duration-300 text-black" id="expbox"><h1 style="font-family:monospace;font-weight: bolder;">Select a date and hit the "Show Explanation" button to get started</h1></div>
-<script id="explanation-today">
+    <div
+      class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom duration-300 text-black"
+      id="expbox"><h1 style="font-family:monospace;font-weight: bolder;">Select
+        a date and hit the "Show Explanation" button to get started</h1></div>
+    <script id="explanation-today">
   function GetEXplanation(dt){
   $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+dt, function (DATA) {
     var explanation = `<b>${DATA.title}</b><br>${DATA.explanation}`;
@@ -74,11 +75,12 @@ function FetchMediaByDate(date){
   })
   }
 </script>
-
 <br>
-<pre class="rounded-lg p-4" id="footer">This webpage uses NASA's APOD API.
+    <pre class="rounded-lg p-4" id="footer">This webpage uses NASA's APOD API.
 <b><a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a></b>
 <u>All images are copyrighted by their respective authors.</u><br>
-This webpage aims provides an interface to access media made publicly available by NASA.</pre>
-</body>
+This webpage aims provides an interface to access media made publicly available by NASA.
+  <img src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
+</pre>
+  </body>
 </html>
