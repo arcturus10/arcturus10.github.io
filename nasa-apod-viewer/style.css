@@ -1,0 +1,17 @@
+#footer {
+    white-space: pre-wrap;
+    word-wrap:break-word;
+    background-color:#aa3405;
+    text-align:justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: linear-gradient(to right top, #0a1726, #051c29, #02212b, #03262b, #092a2a);
+    background-attachment: fixed;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+}  

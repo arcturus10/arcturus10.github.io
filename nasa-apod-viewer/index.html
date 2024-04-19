@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet"
       href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <link rel="stylesheet" href="custom_pre.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="text-black dark:bg-slate-950 dark:text-white">
@@ -61,9 +61,10 @@ function FetchMediaByDate(date){
         Explanation</button><br><br></center>
 
     <div
+      style="font-size: large;"
       class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom duration-300 text-black"
       id="expbox"><h1 style="font-family:monospace;font-weight: bolder;">Select
-        a date and hit the "Show Explanation" button to get started</h1></div>
+        a date and hit the "Show Explanation" button to get started...</h1></div>
     <script id="explanation-today">
   function GetEXplanation(dt){
   $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+dt, function (DATA) {
@@ -77,7 +78,7 @@ function FetchMediaByDate(date){
 <b><a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a></b>
 <u>All images are copyrighted by their respective authors.</u><br>
 This webpage aims provides an interface to access media made publicly available by NASA.
-  <img src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
+  <img class="zoom" src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
 </pre>
   </body>
 </html>
