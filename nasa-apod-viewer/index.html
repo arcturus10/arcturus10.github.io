@@ -27,7 +27,7 @@
 </pre>
     <span class="text-black">
       <center>
-        <input type="date" id="dateinput" min="1995-06-16"><br>
+        <input type="date" id="dateinput" min="1995-06-16" onkeydown="return false"><br>
         <input type="submit" class="bg-white"
           onclick="FetchMediaByDate(document.getElementById('dateinput').value)"></center>
     </span>
@@ -37,8 +37,7 @@ function FetchMediaByDate(date){
     $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+date, function (data) {
 
         if (data.media_type == "image") {
-            var text = `Redirecting you to ${data.hdurl}`
-            location.replace(data.hdurl)
+          location.replace(data.hdurl)
         }
 
         else if (data.media_type == "video" && data.hdurl == null) {
@@ -74,10 +73,9 @@ function FetchMediaByDate(date){
 
 
 <pre class="rounded-lg p-4" id="footer">This webpage uses NASA's APOD API.
-<b><a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a></b>
+<a href="https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY">(https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY)</a>
 <u>All images are copyrighted by their respective authors.</u><br>
-This webpage aims provides an interface to access media made publicly available by NASA.
-  <img src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
+ <img src="https://jspaint.app/images/88x31/collected/gh-pages-bo.gif" alt="Powered by Microsoft GitHub Pages"></div>
 </pre>
   </body>
 </html>
