@@ -60,12 +60,13 @@ function FetchMediaByDate(date){
       style="font-size: large;"
       class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom text-black"
       id="expbox"><h1 style="font-family:monospace;font-weight: bolder;">Select
-        a date and hit the "Show Explanation" button to get started...</h1><span id="status"></span></div>
+        a date and hit the "Show Explanation" button to get started...</h1></div>
+    <span id="status"></span>
     <script id="explanation-today">
   function GetEXplanation(dt){
   $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+dt, function (DATA) {
     var explanation = `<b>${DATA.title}</b><br>${DATA.explanation}`;
-    document.getElementById("expbox").innerHTML+=explanation;
+    document.getElementById("expbox").innerHTML=explanation;
   })}
 </script>
 <br>
