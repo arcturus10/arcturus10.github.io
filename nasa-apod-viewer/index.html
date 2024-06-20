@@ -6,8 +6,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwindcss_config.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet"
-      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -28,7 +26,8 @@
       <center>
         <input type="date" id="dateinput" min="1995-06-16" onkeydown="return false"><br>
         <input type="submit" class="bg-white"
-          onclick="FetchMediaByDate(document.getElementById('dateinput').value)"></center>
+          onclick="FetchMediaByDate(document.getElementById('dateinput').value);
+          "></center>
     </span>
 
     <script> 
