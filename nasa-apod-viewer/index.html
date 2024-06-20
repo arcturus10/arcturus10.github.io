@@ -10,7 +10,6 @@
   </head>
 
   <body class="text-white">
-
     <header class="flex items-center h-48 bg-grey-900">
       <img
         src="nasa.png"
@@ -35,6 +34,8 @@ function FetchMediaByDate(date){
     $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+date, function (data) {
 
         if (data.media_type == "image") {
+          let Code = '<img src="https://i.imgur.com/L19cMwe.gif" alt="Processing...">Redirecting...</img>'
+          document.getElementById("status").innerHTML=Code
           location.replace(data.hdurl)
         }
 
@@ -57,9 +58,9 @@ function FetchMediaByDate(date){
 
     <div
       style="font-size: large;"
-      class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom duration-300 text-black"
+      class="rounded-lg shadow-md p-4 hover:shadow-lg transition bg-custom text-black"
       id="expbox"><h1 style="font-family:monospace;font-weight: bolder;">Select
-        a date and hit the "Show Explanation" button to get started...</h1></div>
+        a date and hit the "Show Explanation" button to get started...</h1><span id="status"></span></div>
     <script id="explanation-today">
   function GetEXplanation(dt){
   $.getJSON("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date="+dt, function (DATA) {
