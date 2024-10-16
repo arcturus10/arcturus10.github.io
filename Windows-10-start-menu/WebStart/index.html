@@ -103,7 +103,9 @@
                window.open("https://arcturus10.github.io/Default.html", "_blank")
             }
             function PasteBinPrivate() {
-               window.open("https://privatebin.net/", "_blank")
+               setTimeout(() => {
+                  window.open("https://privatebin.net/", "_blank")
+               },1300)
             }
             function PBSelInstance() {
                if (confirm("⚠️ Warning: Potential Security Risk ⚠️\n Before using the instance picker, please be aware that some instances might be malicious.\n Do you want to continue? ")) {
