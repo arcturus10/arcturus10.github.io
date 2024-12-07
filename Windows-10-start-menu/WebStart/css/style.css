@@ -72,3 +72,13 @@ nav li:hover {
 .bg-animation {
    animation: bg-animation 50s infinite alternate-reverse ease-in-out;
 }
+
+button {
+   color: #ffffff;
+   background-color: #2d63c8;
+   border-radius: 0px;
+}
+button:hover {
+   color: #2d63c8;
+   background-color: #ffffff;
+}
